@@ -1,0 +1,23 @@
+[package]
+name = "meu_projeto_dilithium"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+pqc_dilithium = "0.2.0"
+hex = "0.4.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[[bin]]
+name = "dilithium_verify"
+path = "src/bin/verify.rs"
+
+[[bin]]
+name = "dilithium_keygen"
+path = "src/bin/keygen.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
